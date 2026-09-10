@@ -1,0 +1,1204 @@
+/* ======== PALENQUE RAÍCES & NATURALEZA styles.css ========= */  
+:root {
+    --verde-oscuro: #173b2a;
+    --verde: #2f6b4f;
+    --verde-claro: #dfeee4;
+    --crema: #f7f2e8;
+    --blanco: #ffffff;
+    --dorado: #c59a4a;
+    --texto: #26332b;
+    --texto-suave: #4e524f;
+    --borde: #d9ded8;
+    --sombra: 0 12px 35px rgba(23, 59, 42, 0.12);
+
+    --fuente-principal: Arial, sans-serif;
+    --fuente-titulos: Georgia, "Times New Roman", serif;
+
+    --radio: 18px;
+}
+
+/* =========================================================
+   1. RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fuente-principal);
+    color: var(--texto);
+    background: var(--crema);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+/* =========================================================
+   2. CONTENEDOR
+   ========================================================= */
+
+.container {
+    width: min(1120px, 92%);
+    margin: 0 auto;
+}
+
+/* =========================================================
+   3. TIPOGRAFÍA
+   ========================================================= */
+
+h1,
+h2,
+h3 {
+    font-family: var(--fuente-titulos);
+    line-height: 1.15;
+    color: var(--verde-oscuro);
+}
+
+h1 {
+    font-size: clamp(2.5rem, 6vw, 4.8rem);
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    margin-bottom: 18px;
+}
+
+h3 {
+    font-size: 1.45rem;
+    margin-bottom: 12px;
+}
+
+p {
+    color: var(--texto-suave);
+}
+
+.eyebrow {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: var(--dorado);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+/* =========================================================
+   4. HEADER Y MENÚ
+   ========================================================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(247, 242, 232, 0.97);
+    border-bottom: 1px solid var(--borde);
+    backdrop-filter: blur(10px);
+}
+
+.nav-wrap {
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-logo {
+    width: 46px;
+    height: 46px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.brand-mark {
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    background: var(--verde-oscuro);
+    color: var(--blanco);
+    border-radius: 14px;
+    font-weight: 900;
+}
+
+.brand strong {
+    display: block;
+    color: var(--verde-oscuro);
+    font-size: 1rem;
+}
+
+.brand small {
+    display: block;
+    color: var(--texto-suave);
+    font-size: 0.7rem;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.main-nav a {
+    padding: 9px 13px;
+    border-radius: 10px;
+    color: var(--texto);
+    font-size: 0.92rem;
+    font-weight: 700;
+    transition: 0.25s ease;
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+    background: var(--verde-claro);
+    color: var(--verde-oscuro);
+}
+
+.main-nav a.active {
+    background: var(--verde-oscuro);
+    color: var(--blanco);
+}
+
+.nav-cta {
+    background: var(--verde-oscuro);
+    color: var(--blanco) !important;
+}
+
+/* =========================================================
+   5. BOTONES
+   ========================================================= */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 48px;
+    padding: 12px 22px;
+    border: 2px solid transparent;
+    border-radius: 999px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn:hover,
+.btn:focus {
+    transform: translateY(-3px);
+    box-shadow: var(--sombra);
+}
+
+.btn-primary {
+    background: var(--verde-oscuro);
+    color: var(--blanco);
+}
+
+.btn-outline {
+    background: transparent;
+    border-color: var(--verde);
+    color: var(--verde-oscuro);
+}
+
+.btn-light {
+    background: var(--blanco);
+    color: var(--verde-oscuro);
+}
+
+.btn-full {
+    width: 100%;
+}
+
+/* =========================================================
+   6. HERO PRINCIPAL
+   ========================================================= */
+
+.hero {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(23, 59, 42, 0.95),
+            rgba(23, 59, 42, 0.65),
+            rgba(23, 59, 42, 0.2)
+        ),
+        linear-gradient(135deg, #315e46, #8da878);
+
+    color: var(--blanco);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.hero h1 {
+    color: var(--blanco);
+    max-width: 720px;
+}
+
+.hero p {
+    max-width: 650px;
+    margin: 24px 0;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 1.08rem;
+}
+
+.hero .eyebrow {
+    color: #f0d28a;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* =========================================================
+   7. TARJETA DEL HERO
+   ========================================================= */
+
+.hero-card {
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.13);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 28px;
+    backdrop-filter: blur(10px);
+    box-shadow: var(--sombra);
+}
+
+.hero-card h2 {
+    color: var(--blanco);
+    font-size: 2rem;
+}
+
+.hero-card p {
+    margin: 0;
+}
+
+.hero-card .tag {
+    margin-bottom: 20px;
+}
+
+/* =========================================================
+   8. HERO DE PÁGINAS INTERNAS
+   ========================================================= */
+
+.page-hero {
+    padding: 100px 0;
+    background:
+        linear-gradient(
+            120deg,
+            var(--verde-oscuro),
+            var(--verde)
+        );
+}
+
+.page-hero h1 {
+    max-width: 850px;
+    color: var(--blanco);
+}
+
+.page-hero p {
+    max-width: 720px;
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.05rem;
+}
+
+.page-hero .eyebrow {
+    color: #f0d28a;
+}
+
+/* =========================================================
+   9. SECCIONES
+   ========================================================= */
+
+.section {
+    padding: 95px 0;
+}
+
+.section-soft {
+    background: var(--verde-claro);
+}
+
+.section-dark {
+    background: var(--verde-oscuro);
+}
+
+.section-dark h2 {
+    color: var(--blanco);
+}
+
+.section-dark p {
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.section-heading {
+    max-width: 720px;
+    margin-bottom: 48px;
+}
+
+/* =========================================================
+   10. GRID
+   ========================================================= */
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.two-columns {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* =========================================================
+   11. TARJETAS
+   ========================================================= */
+
+.card,
+.info-card,
+.service-card,
+.value-card,
+.destination-card,
+.tour-card {
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+}
+
+/* =========================================================
+   12. TARJETAS DE DESTINOS
+   ========================================================= */
+
+.destination-card,
+.tour-card {
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.destination-card:hover,
+.tour-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 18px 45px rgba(23, 59, 42, 0.18);
+}
+
+/* =========================================================
+   13. IMAGEN DE CADA DESTINO
+   ========================================================= */
+
+/*
+   IMPORTANTE:
+   La imagen debe estar DENTRO de .card-image.
+*/
+
+.card-image {
+    height: 230px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+
+    display: block;
+
+    padding: 0;
+    margin: 0;
+
+    background: none;
+}
+
+/* La fotografía ocupa TODO el recuadro */
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    margin: 0;
+    padding: 0;
+}
+
+/* Número del destino */
+
+.card-image > span {
+    position: absolute;
+    bottom: 12px;
+    right: 15px;
+
+    color: var(--blanco);
+    font-size: 18px;
+    font-weight: 900;
+
+    z-index: 3;
+
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Etiqueta Palenque */
+
+.card-image::after {
+    content: "Palenque";
+
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+    padding: 6px 12px;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--verde-oscuro);
+
+    font-size: 0.7rem;
+    font-weight: 800;
+
+    z-index: 2;
+}
+
+/* =========================================================
+   14. CLASES DE IMAGEN
+   ========================================================= */
+
+/*
+   NO ponemos fondos verdes aquí.
+   Las fotografías serán el fondo visual.
+*/
+
+.img-reveza,
+.img-jauneche,
+.img-garzas,
+.img-infante,
+.img-iglesia,
+.img-plaza {
+    background: none;
+}
+
+/* =========================================================
+   15. CUERPO DE LAS TARJETAS
+   ========================================================= */
+
+.card-body {
+    padding: 24px;
+}
+
+.card-body p {
+    margin-bottom: 18px;
+}
+
+.card-body h2,
+.card-body h3 {
+    color: var(--verde-oscuro);
+}
+
+/* =========================================================
+   16. ETIQUETAS
+   ========================================================= */
+
+.tag {
+    display: inline-block;
+
+    padding: 5px 11px;
+
+    border-radius: 999px;
+
+    background: var(--verde-claro);
+    color: var(--verde-oscuro);
+
+    font-size: 0.72rem;
+    font-weight: 800;
+}
+
+/* =========================================================
+   17. INFORMACIÓN DE TARJETAS
+   ========================================================= */
+
+.card-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    padding-top: 15px;
+
+    border-top: 1px solid var(--borde);
+}
+
+.card-meta span {
+    color: var(--texto-suave);
+    font-size: 0.88rem;
+}
+
+.card-meta strong {
+    color: var(--verde-oscuro);
+}
+
+/* =========================================================
+   18. SERVICIOS
+   ========================================================= */
+
+.service-card {
+    position: relative;
+    padding: 32px;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+}
+
+.service-number {
+    width: 48px;
+    height: 48px;
+
+    display: grid;
+    place-items: center;
+
+    margin-bottom: 22px;
+
+    border-radius: 14px;
+
+    background: var(--verde-claro);
+    color: var(--verde-oscuro);
+
+    font-weight: 900;
+}
+
+.featured-service {
+    border: 2px solid var(--dorado);
+}
+
+.service-card .tag {
+    margin-bottom: 16px;
+}
+
+.service-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    margin: 25px 0;
+    padding: 16px;
+
+    background: var(--crema);
+    border-radius: 12px;
+}
+
+.service-info strong {
+    color: var(--verde-oscuro);
+}
+
+.service-info span {
+    color: var(--dorado);
+    font-weight: 800;
+}
+
+/* =========================================================
+   19. DOS COLUMNAS
+   ========================================================= */
+
+.split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 70px;
+}
+
+/* =========================================================
+   20. PANEL DE INFORMACIÓN
+   ========================================================= */
+
+.info-panel {
+    padding: 32px;
+
+    background: var(--blanco);
+
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+
+    box-shadow: var(--sombra);
+}
+
+.info-panel h3 {
+    margin-bottom: 15px;
+}
+
+.mini-stat {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 16px 0;
+
+    border-top: 1px solid var(--borde);
+}
+
+.mini-stat strong {
+    color: var(--dorado);
+    font-size: 1.2rem;
+}
+
+.mini-stat span {
+    color: var(--texto-suave);
+}
+
+/* =========================================================
+   21. VALORES
+   ========================================================= */
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.value-card {
+    padding: 28px;
+}
+
+.value-icon {
+    display: inline-grid;
+
+    width: 45px;
+    height: 45px;
+
+    place-items: center;
+
+    margin-bottom: 18px;
+
+    border-radius: 12px;
+
+    background: var(--verde-oscuro);
+    color: var(--blanco);
+
+    font-size: 0.8rem;
+    font-weight: 900;
+}
+
+/* =========================================================
+   22. LISTA DE CHECK
+   ========================================================= */
+
+.check-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.check-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+}
+
+.check-item span {
+    color: #f0d28a;
+    font-size: 1.2rem;
+    font-weight: 900;
+}
+
+.check-item p {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* =========================================================
+   23. INFORMACIÓN DEL DESTINO
+   ========================================================= */
+
+.destination-facts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.fact-card {
+    padding: 25px;
+
+    background: var(--blanco);
+
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+
+    box-shadow: var(--sombra);
+}
+
+.fact-card strong {
+    display: block;
+    margin-bottom: 7px;
+
+    color: var(--verde-oscuro);
+}
+
+.fact-card span {
+    color: var(--texto-suave);
+}
+
+/* =========================================================
+   24. CONTACTO
+   ========================================================= */
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+
+    gap: 50px;
+
+    align-items: start;
+}
+
+.contact-info {
+    position: sticky;
+    top: 120px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+
+    margin: 22px 0;
+}
+
+.contact-icon {
+    width: 44px;
+    height: 44px;
+
+    display: grid;
+    place-items: center;
+
+    flex-shrink: 0;
+
+    background: var(--verde-claro);
+    border-radius: 12px;
+}
+
+.contact-item strong {
+    color: var(--verde-oscuro);
+}
+
+.contact-item p {
+    font-size: 0.92rem;
+}
+
+/* =========================================================
+   25. FORMULARIO
+   ========================================================= */
+
+.form-card {
+    padding: 38px;
+
+    background: var(--blanco);
+
+    border: 1px solid var(--borde);
+    border-radius: 24px;
+
+    box-shadow: var(--sombra);
+}
+
+.form-heading {
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label,
+.form-group legend {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--verde-oscuro);
+
+    font-weight: 800;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+
+    outline: none;
+
+    background: var(--blanco);
+    color: var(--texto);
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+    border-color: var(--verde);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--verde);
+
+    box-shadow:
+        0 0 0 4px rgba(47, 107, 79, 0.12);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+}
+
+fieldset {
+    border: 0;
+}
+
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.radio-group label,
+.form-check label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: var(--texto-suave);
+
+    font-weight: 500;
+}
+
+.radio-group input,
+.form-check input {
+    width: auto;
+}
+
+.form-check {
+    margin: 20px 0;
+}
+
+/* =========================================================
+   26. CTA
+   ========================================================= */
+
+.cta-section {
+    padding: 75px 0;
+
+    background: var(--verde);
+}
+
+.cta-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.cta-section h2 {
+    color: var(--blanco);
+}
+
+.cta-section p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.cta-section .eyebrow {
+    color: #f0d28a;
+}
+
+/* =========================================================
+   27. FOOTER
+   ========================================================= */
+
+.site-footer {
+    padding: 65px 0 20px;
+
+    background: #102a1e;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+
+    gap: 50px;
+}
+
+.footer-brand strong {
+    color: var(--blanco);
+}
+
+.footer-brand small {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.site-footer p {
+    max-width: 360px;
+
+    margin-top: 15px;
+
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.site-footer h4 {
+    margin-bottom: 15px;
+
+    color: var(--blanco);
+}
+
+.site-footer a:not(.brand) {
+    display: block;
+
+    width: fit-content;
+
+    margin: 7px 0;
+
+    color: rgba(255, 255, 255, 0.65);
+
+    transition: color 0.2s ease;
+}
+
+.site-footer a:not(.brand):hover,
+.site-footer a:not(.brand):focus {
+    color: var(--blanco);
+}
+
+.footer-bottom {
+    margin-top: 50px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.82rem;
+}
+
+/* =========================================================
+   28. RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .nav-wrap {
+        flex-direction: column;
+        padding: 15px 0;
+    }
+
+    .main-nav {
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+    .hero {
+        min-height: 600px;
+    }
+
+    .hero-grid,
+    .split,
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-grid {
+        gap: 40px;
+    }
+
+    .contact-info {
+        position: static;
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .destination-facts {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .cta-content {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+}
+
+/* =========================================================
+   29. RESPONSIVE — CELULAR
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: min(92%, 500px);
+    }
+
+    .site-header {
+        position: static;
+    }
+
+    .nav-wrap {
+        gap: 15px;
+    }
+
+    .main-nav {
+        gap: 3px;
+    }
+
+    .main-nav a {
+        padding: 7px 8px;
+        font-size: 0.78rem;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 80px 0;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-card {
+        padding: 24px;
+    }
+
+    .page-hero {
+        padding: 70px 0;
+    }
+
+    .section {
+        padding: 65px 0;
+    }
+
+    .cards-grid,
+    .two-columns,
+    .values-grid,
+    .form-row,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card-image {
+        height: 210px;
+    }
+
+    .service-card,
+    .form-card,
+    .info-panel {
+        padding: 25px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+    }
+
+    .cta-section {
+        padding: 60px 0;
+    }
+
+    .cta-content {
+        align-items: stretch;
+    }
+
+    .cta-content .btn {
+        width: 100%;
+    }
+
+    .radio-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    h1 {
+        font-size: 2.6rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+}
+
+/* =========================================================
+   30. ACCESIBILIDAD
+   ========================================================= */
+
+:focus-visible {
+    outline: 3px solid var(--dorado);
+    outline-offset: 3px;
+}
